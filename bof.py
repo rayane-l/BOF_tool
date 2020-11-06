@@ -199,10 +199,10 @@ for i in sys.argv:
  i = str(i)
  if(i=="--help" or i=='-h'):
   print("""
-    --badchars   / -bc   -these commands used to generate bad characterslist option[-bc length]
-    --pattern    / -p    -these commands used to generate pattern by specifyin the length [-p 500]
-    --hexrev     / -hex  -these commands used to reverse a hexa string [FF5a = \\x5a\\FF]
-    --offsetptrn / -ofp  -these commands used to search in pattern with specific length [-ofp 5aFF 100] 
+    --badchars   / -bc   -generate bad characterslist option[-bc length]
+    --pattern    / -p    -generate pattern by specifyin the length [-p 500]
+    --hexrev     / -hex  -reverse a hexa string [FF5a = \\x5a\\FF]
+    --offsetptrn / -ofp  -search in pattern by specific length [-ofp 5aFF 100] 
   	""")
  else:
   
