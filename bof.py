@@ -227,7 +227,7 @@ for i in sys.argv:
     os.system("git")
    except:
     os.system('apt install git')
-   os.system("git clone https://github.com/rayane-l/BOF_tool.git && clear && mv BOF_tool ../")
+   os.system("git clone https://github.com/rayane-l/BOF_tool.git && mkdir ../ddwawa && mv BOF_tool ../ddwawa/ && rm -rf ../BOF_tool")
   if(i=='--pattern' or i=="-p"):
 
    d+=1
