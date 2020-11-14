@@ -201,11 +201,12 @@ for i in sys.argv:
  i = str(i)
  if(i=="--help" or i=='-h'):
   print("""
-    --badchars   / -bc   -these commands used to generate bad characterslist option[-bc length]
-    --pattern    / -p    -these commands used to generate pattern by specifyin the length [-p 500]
-    --hexrev     / -hex  -these commands used to reverse a hexa string [FF5a = \\x5a\\FF]
-    --offsetptrn / -ofp  -these commands used to search in pattern with specific length [-ofp 5aFF 100] 
-  	""")
+    --badchars   / -bc   - generate bad characterslist option[-bc length]
+    --pattern    / -p    - generate pattern by specifyin the length [-p 500]
+    --hexrev     / -hex  - reverse a hexa string [FF5a = \\x5a\\FF]
+    --offsetptrn / -ofp  - search in pattern with specific length [-ofp 5aFF 100] 
+    --update             - download updates
+    """)
  else:
   
   if(i=='--badchars' or i=="-bc"):
@@ -220,7 +221,13 @@ for i in sys.argv:
    except:
     print(bold+red+"[-]"+end+" faild to generate badchars \n")
 
-
+  if(i=='--update'):
+   d+=1
+   try:
+    os.system("git")
+   except:
+    os.system('apt install git')
+   os.system("git clone https://github.com/rayane-l/BOF_tool.git")
   if(i=='--pattern' or i=="-p"):
 
    d+=1
@@ -250,7 +257,7 @@ for i in sys.argv:
    d+=1
    try:
     if(int(length)<=1):
-     print(bold+red+"[-]"+end+"please Enter The patter length ")
+     print(bold+red+"[-]"+end+"please Enter The pattern length ")
     else:
      find_the_offset(off,length)
      print()
