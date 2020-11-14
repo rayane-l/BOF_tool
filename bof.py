@@ -5,7 +5,7 @@ import sys,os
 import codecs
 import math
 import re
-
+import platform
 
 
 
@@ -32,7 +32,7 @@ Tool to help exploiting Buffer_Overflow Vulnerabilities
 type --help for more options
 
 """
-print(banner)
+
 
 #colors 
 blue = "\033[34m"
@@ -191,18 +191,20 @@ def find_the_offset(something,length): # and givin the info #gihub
 
 #Ab1Ab 4162314162
 #6241316241
-
-os.system("clear")
+if(platform.system()=="Linux"):
+ os.system("clear")
+else:
+ os.system("cls")
 print(banner)
 d=0
 for i in sys.argv:
  i = str(i)
  if(i=="--help" or i=='-h'):
   print("""
-    --badchars   / -bc   -generate bad characterslist option[-bc length]
-    --pattern    / -p    -generate pattern by specifyin the length [-p 500]
-    --hexrev     / -hex  -reverse a hexa string [FF5a = \\x5a\\FF]
-    --offsetptrn / -ofp  -search in pattern by specific length [-ofp 5aFF 100] 
+    --badchars   / -bc   -these commands used to generate bad characterslist option[-bc length]
+    --pattern    / -p    -these commands used to generate pattern by specifyin the length [-p 500]
+    --hexrev     / -hex  -these commands used to reverse a hexa string [FF5a = \\x5a\\FF]
+    --offsetptrn / -ofp  -these commands used to search in pattern with specific length [-ofp 5aFF 100] 
   	""")
  else:
   
@@ -258,11 +260,3 @@ for i in sys.argv:
    else:
     print("Command not found , type -h or --help ") 
 	
-
-
-
-
-
-
-
-
