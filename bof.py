@@ -1,5 +1,5 @@
 # python3
-# used to exploit buffeOverflow vulnerabilities 
+# buffeOverflow assistant tool 
 # BOF script
 import sys,os
 import codecs
