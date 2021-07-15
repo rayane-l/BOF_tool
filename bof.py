@@ -24,13 +24,10 @@ banner = """
    \033[93m| |_) | |__| | |     
    |____/ \\____/|_|     \033[0m
                      
-
-
                             email:rayane101213@gmail.com
 \nUsage : python3 bof.py [options...] [input]                                                        
 Tool to help exploiting Buffer_Overflow Vulnerabilities  
 type --help for more options
-
 """
 
 
@@ -197,26 +194,22 @@ else:
  os.system("cls")
 print(banner)
 d=0
-for i in sys.argv:
- i = str(i)
- if(i=="--help" or i=='-h'):
-  print("""
+print("""
     --badchars   / -bc   - generate bad characterslist option[-bc length]
     --pattern    / -p    - generate pattern by specifyin the length [-p 500]
     --hexrev     / -hex  - reverse a hexa string [FF5a = \\x5a\\FF]
     --offsetptrn / -ofp  - search in pattern with specific length [-ofp 5aFF 100] 
     --update             - download updates
     """)
- else:
-  
+for i in sys.argv:
+  i = str(i)
   if(i=='--badchars' or i=="-bc"):
    d+=1
-  
    try:
     datfa = sys.argv[d+1]
     print(bold+blue+"[*]"+end+" badchars generate succefully \n")
     for ff in badchars(int(datfa)):
-     print("buffer += {}".format(ff))
+     print("buffer += \"{}\"".format(ff))
     d+=1
    except:
     print(bold+red+"[-]"+end+" faild to generate badchars \n")
